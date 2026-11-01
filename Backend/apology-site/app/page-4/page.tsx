@@ -222,11 +222,12 @@ export default function Page4() {
             <QuestionCard id="p4q32" question="Q- Are Dipali tu tyala Reply dyala thoda delay karat asnar tr to yevda Desperate houn pagal jhala ki tula direct unfollow wagera karyla lagla... Konich asli Faltugiri sahan nasti keli... Te pn to jhatu Prt follow karycha ani prt Unfollow... Mood Swings hot hote tya Bailya la... Yevda kasa Serious Relationship jhala yaar Tumch ki to yevda Obsessed jhala hota tula asa kay kela ahes tu techya sobt ? Tu Committed kadi jhali Dipali tyala ?" options={["I am Commited to Mr Tillu", "Mala Nahi pahije asla sarv"]} />
             <QuestionCard id="p4q33" question="Are Dipali tu tr bolychi ki amhi fkt Abhyasach bolto mg ho faltugiri tujya abhyasacha part ahe ka ?" options={["Yes, its part of it", "Tyani thoda Over kela"]} />
             <QuestionCard id="p4q34" question="Q- kuthli pn Normal mulgi asti tr asla Obsession kadich sahan nasta kela kuthlyach mulacha lagech block karun... Free jhali asti tu kay kela ?" />
-
+{/* https://www.instagram.com/reel/DeEo1wJRfMe/embed
+ */}
             {/* Reel 1 (DeEo1wJRfMe) - Direct iFrame, completely error-free */}
             <div className="my-[48px] flex justify-center w-full">
               <iframe 
-                src="https://www.instagram.com/reel/DeEo1wJRfMe/embed" 
+                src="https://www.instagram.com/reel/Dblag9Wox4S/embed" 
                 width="320" 
                 height="540" 
                 frameBorder="0" 
@@ -359,10 +360,11 @@ export default function Page4() {
             <QuestionCard id="p4q70" question="Q- Dipali tula khara wata mi tula Efforts count karvat ahe ?... Are Didi mi je kahi kela te me khup selfless houn without any expectations kelay, mi pratyek sukha dukhat Gambhir pane tuja sobt ubha hoto... Ani Maitri Madhe He sarv karvch lagta...Ani mi Life time tuja sathi karatch rahanar... no Doubt... Maja kartvya ahe te... Bare minimum ahe te… But Didi tu je kahi karat ahes na... Ki thoda controll karu swatala... Roshan la Ignore karu mg to swata thambnar... Reels pathvychya nahit save karycha fukatcha attitude... Sada Roshan ni call kar bolo tr faltu madhe juna vishay kadun trigger karycha... Roshan peksha tula dusre log jawal che jhale ahet... Jyani sada lagnat pn swatahun nahi bolavla te tula javal che watat... Bhai sada tula party la bolavla tr mala shivya ghalanare pn hech loka hote... Yashraj ani sujal tr ajun pn boltat mala... Pn still tula te sarv javalche jhalet... Are Aniket sarkha divas bhar fkt tulach Message karun possessive ani obsessed houn basnare tuja lover tula Maja sarkha kasa watu shkto. " />
             <QuestionCard id="p4q71" question="Q- Bg Didi Mi Divas ratra mulan sobt rahato Mala Mahit ahe mulanchi Mentality… In case Kuthlya pn mulala eka mula sathi Feelings astil kiva to tya muli madhe interest asel… ani ti mulgi tyala thoda jari kay boli tr to mulga tila ghost karnar… asa dakhvnar ki tyala kahich farak nahi pdt… tulach majhi garaj ahe… mala tujhi nahi… Relationships madhe asch hota… Majhe mitra tyancha GF la ashech ghost karun torture kartat, tyana mahit ahe muli emotional fool astat tyach yetil prt…mala mahit ahe Didi mulanche Feeling kadi kami nastat hot Believe me, bas te dakhvnar nahit kadi, Aniket pn hech same pattern follow kartoy… karan tyala mahit ahe ki tu Mandh Buddhi swata janar tyacha kade" options={["mi Janar tyacha kade avdta tillu mala", "Baki mulan sarkh mala pn kahi ghena dena nahi"]} />
 
+
             {/* Reel 2 (Dblag9Wox4S) */}
             <div className="my-[48px] flex justify-center w-full">
               <iframe 
-                src="https://www.instagram.com/reel/Dblag9Wox4S/embed" 
+                src="https://www.instagram.com/reel/DeEo1wJRfMe/embed" 
                 width="320" 
                 height="540" 
                 frameBorder="0" 
