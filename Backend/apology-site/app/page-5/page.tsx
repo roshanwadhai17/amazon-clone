@@ -135,12 +135,9 @@ export default function Page5() {
               Aai Bolte ki Bahin hi Laxmi sarkhi aste aaj jevda denar udya 100x waps bhetnar, mi pn hech manto, khup lalchi ahe mi. Khup pure Intent ni alo hoto Didi…Mala Mahit ahe tu kashi ahes… You are the most kind hearted Soul I have ever met in my life. You have a Golden heart, Didi, and that's something I will always admire about you.
             </p>
 
-            <p className={`${textClass} text-center`}>
-              Yevd Kharab Treat nako karu Didi ekdam stranger sarkha
-            </p>
             <QuestionCard 
               id="final_answer" 
-              question="Yevd Kharab Treat nako karu Didi ekdam stranger sarkha" 
+              question="Yevd Kharab Treat nako karu Didi ekdam stranger sarkha, Yevda vait nahi mi, nehmi tuja sathi ubha hoto in all ur ups and downs, Bas Kaljhi keli ahe tujhi..." 
               options={["Nahi Karnar", "tu hech Deserve karto"]} 
             />
 
