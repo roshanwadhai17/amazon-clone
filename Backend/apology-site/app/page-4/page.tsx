@@ -23,9 +23,9 @@ export default function Page4() {
   const [isMusicPlaying, setIsMusicPlaying] = useState(true);
   const [destroyAudio, setDestroyAudio] = useState(false);
   
-  // TRACKER FOR 73 QUESTIONS
+  // TRACKER FOR 38 QUESTIONS (Options-based on this page)
   const [questionStatus, setQuestionStatus] = useState<Record<string, boolean>>({});
-  const TOTAL_QUESTIONS = 73;
+  const TOTAL_QUESTIONS = 38; 
 
   useEffect(() => {
     const handleStatus = (e: any) => {
@@ -58,11 +58,9 @@ export default function Page4() {
     router.push(path);
   };
 
-  // STRICT VALIDATION: Blocks navigation if any field is empty
   const handleNextPage = () => {
     const completedCount = Object.values(questionStatus).filter(status => status === true).length;
     
-    // Safety check - ensures we don't proceed if any question is incomplete
     if (completedCount < TOTAL_QUESTIONS) {
       alert(`⚠️ You cannot proceed yet!\n\nPlease make sure every option is ticked and every text field is filled before moving forward. 🙂\n\n(Completed: ${completedCount} / ${TOTAL_QUESTIONS})`);
       return;
@@ -83,7 +81,6 @@ export default function Page4() {
     boxShadow: '0 2px 3px rgba(0,0,0,.2), 0 12px 28px rgba(0,0,0,.25)',
   };
   
-  // Blue lines removed for a clean diary page look
   const linesStyle = {
     paddingLeft: '48px', paddingRight: '24px', paddingTop: '24px', paddingBottom: '48px',
   };
@@ -111,7 +108,6 @@ export default function Page4() {
         )}
       </AnimatePresence>
 
-      {/* The invisible Background Music Player (Starts automatically when photo is in view) */}
       {isPhotoInView && !destroyAudio && (
         <iframe 
           ref={ytPlayerRef}
@@ -222,9 +218,7 @@ export default function Page4() {
             <QuestionCard id="p4q32" question="Q- Are Dipali tu tyala Reply dyala thoda delay karat asnar tr to yevda Desperate houn pagal jhala ki tula direct unfollow wagera karyla lagla... Konich asli Faltugiri sahan nasti keli... Te pn to jhatu Prt follow karycha ani prt Unfollow... Mood Swings hot hote tya Bailya la... Yevda kasa Serious Relationship jhala yaar Tumch ki to yevda Obsessed jhala hota tula asa kay kela ahes tu techya sobt ? Tu Committed kadi jhali Dipali tyala ?" options={["I am Commited to Mr Tillu", "Mala Nahi pahije asla sarv"]} />
             <QuestionCard id="p4q33" question="Are Dipali tu tr bolychi ki amhi fkt Abhyasach bolto mg ho faltugiri tujya abhyasacha part ahe ka ?" options={["Yes, its part of it", "Tyani thoda Over kela"]} />
             <QuestionCard id="p4q34" question="Q- kuthli pn Normal mulgi asti tr asla Obsession kadich sahan nasta kela kuthlyach mulacha lagech block karun... Free jhali asti tu kay kela ?" />
-{/* https://www.instagram.com/reel/DeEo1wJRfMe/embed
- */}
-            {/* Reel 1 (DeEo1wJRfMe) - Direct iFrame, completely error-free */}
+
             <div className="my-[48px] flex justify-center w-full">
               <iframe 
                 src="https://www.instagram.com/reel/Dblag9Wox4S/embed" 
@@ -262,7 +256,7 @@ export default function Page4() {
             
             <QuestionCard id="p4q39" question={'Q- Are to Abhishek tujya Aniket ani amchya Sarvan samor Yeun bolto ki " ha Tillya Dipali mage pagal jhalay mala bolto ki aaj kuthlya pn Haltit Dipali la bhetych ahe 😅"\nmg Sujal bola ki " Are ata amchya samor jevatana Bhetla ki Dipali la 😂"\nmg Abhishek bola ki " ha Ka mala nohta mahit he 🤔 "\nmg Mahesh bola ki " Ektyat bhetaych Asel Tilli la 😁"\nWtf Bhai kay relation ahe tumch? Baki konala tr ghanta farak nahi padla tuja yevda... bas sarvech as a friend bolat hote ? Tyalach ka yevd Desperation ani Obsession ? Ani te pn yevd sarv past madhe jhalya vr… mg tr bolnarch tula Tillya chi Tilli\n( Jaun vichar konala pn khota watat asel tr )'} options={["Sorry", "Samajla Mala Sarv"]} />
 
-            <QuestionCard id="p4q40" question="Q- Are Dipali just tell me apn pn changle Friends ahot even sarvat jast bolna maja sobt asnar tuja... Even tya veles tr apn kasa jaych, konasobt jaych, he sarv discuss karat hoto mi tr even tula kiti bolo ki Omkar sobt cab ni ye... Ani at the end bolo ki scarf wagera bandun ye 3-4 tras travelling khup tras honar… Bahin samjun bolo, care karto mhnun… karan mala mahit ahe Hinjewadich Deadly Traffic…But mi Event madhe tula ek tari vela kadi Yeun kahi bolo kay ? Just firta firta kadi disli tr gamat karycho bolycho ki Double Line madhe lagli 😅 mg sujal pn maja gyach... Teva pn mi Majya team la shodat hoto... Are Even Dance chya veles Yashraj mala kiti vela bola ki ' Dipali la call karun bolov Dance karyla sarvana Gheun ' pn mi Nahi bolycho… Maja sod re tithe ektari mulga Disparate houn fkt tula bhetyla ala hota kay ? Sarvech sarvan sobt involve hot hote ? But Dipali tuja Obsessed Tillya la fkt tuch pahije hoti 😂 tuja sathi mulan sobt dance karyla pn nahi aala." options={["Mala pn Tillu la bhetych hota prt", "He sarv faltugiri nahi chalnar mala"]} />
+            <QuestionCard id="p4q40" question="Q- Are Dipali just tell me apn pn changle Friends ahot even sarvat jast bolna maja sobt asnar tuja... Even tya veles tr apn kasa jaych, konasobt jaych, he sarv discuss hoto mi tr even tula kiti bolo ki Omkar sobt cab ni ye... Ani at the end bolo ki scarf wagera bandun ye 3-4 tras travelling khup tras honar… Bahin samjun bolo, care karto mhnun… karan mala mahit ahe Hinjewadich Deadly Traffic…But mi Event madhe tula ek tari vela kadi Yeun kahi bolo kay ? Just firta firta kadi disli tr gamat karycho bolycho ki Double Line madhe lagli 😅 mg sujal pn maja gyach... Teva pn mi Majya team la shodat hoto... Are Even Dance chya veles Yashraj mala kiti vela bola ki ' Dipali la call karun bolov Dance karyla sarvana Gheun ' pn mi Nahi bolycho… Maja sod re tithe ektari mulga Disparate houn fkt tula bhetyla ala hota kay ? Sarvech sarvan sobt involve hot hote ? But Dipali tuja Obsessed Tillya la fkt tuch pahije hoti 😂 tuja sathi mulan sobt dance karyla pn nahi aala." options={["Mala pn Tillu la bhetych hota prt", "He sarv faltugiri nahi chalnar mala"]} />
             <QuestionCard id="p4q41" question="Q- Are Dipu Didi tuja kahi varshat lagna honar ahe... Lahan nahi rahili ata... Just Tell mi kutlya Muli la tya event madhe asa Obsesssed houn Kuthla mulga shodat hota... Yevd jhalya vr... Kuthlya mulila Tillya chi Tilli kiva kahi pn koni chidvla kay ? Tuja sobtch ka hotay asa ? Ka yevd Desperation…" />
 
             <p className={textClass}>Bg Dipu Didi tyani Hackathon sathi je kahi Bhasad keli amchya Virdodhat mala tyacha khup Raag hota… mala tuja kahi ghena dena nohta… Baki konalach kahi farak nahi padla tyalach ka… Mitra bolto na amhala Mg asla faltu pana ?</p>
@@ -341,7 +335,7 @@ export default function Page4() {
 
             <QuestionCard id="p4q63" question="Q- Kuthla mulga aplya khup mage mage karat asel... Aplya la baki mitran peksha alag treat karat asel... Divas ratra garaj nastana BF sarkha text karat asel... Group madhe nahi tr nehmi individual personal space create kart asel... One to one relation banvych try karat asel... Jya mitran sobt divas ratra maje kelet tyana ignore karun fkt tula call karyla lavat asel... Thoda Bolna kami jhala tr Obssesed houn Randi rona karat asel, dusryan chya team madhe asla tr possessiveness dakhvun team leave kar bolat asel, reels spam karat asel ani tula samorun pathvat ja bolat asel... Ani baki mitranche seen vr sodat asel, aapn alo tr aplya mage mage office la yet asel, sarvan samor Dipali Avdte mhnun accept karat asel, Tyacha mule sarv lok tila Tilli chidvat asel tr kuthli pn mulgi Tyacha sobt Distance maintain karun tyala Dur karel... Fukat che attachments nahi thevnar...tu tr Friendship Maintain karnyachya nava khali kay kay kelay sahan. Yevdi tr aakal aste konala pn…" options={["Maja Chukla", "Mala pn ahet Feelings"]} />
 
-            <p className={textClass}>Bg bhai mi Mulan madhe rahato mala mahit ahe mulanchi mentallity... Incase amhala kuthlya muli sathi feelings asnar tr amhi tila special treat karnar... Ugach tila message karnar... Nehmi ticha madat karych try karnar...ticha life madhe khup involve honar... In simple words tila baki Mitran peksha special treat karnar... Tya mulala tujya sathi pahile pasunch Feelings hotya but now it's completely upto u ki tya Obssesed Tillya la kasa tackle karych... But tu tyala ajun validation det basli... Tula thodi tari akal pahije ki he sarv special treatment aplyalach ka ? Kahich special nahi tujyat bakin Mulan peksha... Thoda tari Boundaries tu maintain karyla pahije hotya tuja side ni... Mi khara sangto mala koni avdat asta tr mi pn Aniket sarkhach kela asta... Mi swata answer pathvycho anushka la test che 😅, mi swata project pn banvun dila ticha... Mg mahit padla ti booked ahe... Vichar konala pn... Asach asta sarv mulanch... Thoda thoda karun involve vaycha ani mg Dhappa... Tyala ahet feelings tuja sathi khota watat asel tr kar propose tyala let's see his reaction 😂 bolte Majya Best Friend sarkha hota to... Are office madla Kuthla pn mulane tula divas ratra message karun involve jhala tr tyala Best Friend bolnar kay ?</p>
+            <p className={textClass}>Bg bhai mi Mulan madhe rahato mala mahit ahe mulanchi mentallity... Incase amhala kuthlya muli sathi feelings asnar tr amhi tila special treat karnar... Ugach tila message karnar... Nehmi ticha madat karych try karnar...ticha life madhe khup involve honar... In simple words tila baki Mitran peksha special treat karnar... Tya mulala tujya sathi pahile pasunch Feelings hotya but now its completely upto u ki tya Obssesed Tillya la kasa tackle karych... But tu tyala ajun validation det basli... Tula thodi tari akal pahije ki he sarv special treatment aplyalach ka ? Kahich special nahi tujyat bakin Mulan peksha... Thoda tari Boundaries tu maintain karyla pahije hotya tuja side ni... Mi khara sangto mala koni avdat asta tr mi pn Aniket sarkhach kela asta... Mi swata answer pathvycho anushka la test che 😅, mi swata project pn banvun dila ticha... Mg mahit padla ti booked ahe... Vichar konala pn... Asach asta sarv mulanch... Thoda thoda karun involve vaycha ani mg Dhappa... Tyala ahet feelings tuja sathi khota watat asel tr kar propose tyala let's see his reaction 😂 bolte Majya Best Friend sarkha hota to... Are office madla Kuthla pn mulane tula divas ratra message karun involve jhala tr tyala Best Friend bolnar kay ?</p>
             
             <QuestionCard id="p4q64" question="Q- Btw Dipali mala pn kuthli mulgi avdat asel tr mi tila Rani sarkha thevnar... Tila maja tras wagera kadich nahi honar...Tila impress karych try karnar… In the same way Tillya cha pn tula kadich tras nahi honar... Bas lagnat Yeun radnar tujya 😂 Are Tillya jevda tula latakla tevda kuthlya khambya la latkla tr tyachi pn Height amchya yevdi asti... Bolte mala Tyacha tras nohta karan to tula maitrin samjatch nohta... Lovercha kasla tras bhai🤣🤣" />
             <QuestionCard id="p4q65" question={'Q- Tu nehmi bolychi karte tyala handle karte tyala handle\nBas tula yevd bolych hota... Solution to your complete problem\n" Jasa Baki office chya mitran sobt rahat tasach maja sobt raha "\nPn tu yevd pn nahi bolu shakli... Mhnje tulach special treatment pahije hoti 😅'} />
@@ -352,19 +346,18 @@ export default function Page4() {
             <p className={textClass}>Majhi bas Yevdi chuk Ahe ki mi tujya vr Chidlo bas yevdch… Bahin bolto tula aadi Hasi majak madich sangitla ki tyach jasta hotay khup… mg nantr Prove pn karun dakhvla bg bakin sobt kasa ahe ani tuja sobt kasa… ani tya nantr tuja sobt yevd sarv Abnormal ghoshti jhalya ahet.. Didi maja je kahi Concern hota to for sure Real hota… Maja bas tu Aadich Aaikli asti tr Yevda kadich nasta jhala. Bas tu tyala ekda boli asti ki  “Jasa Bakin Sobt wagto tasach Maja sobt pn Wagh”</p>
 
             <h2 className={`${caveat.className} text-3xl font-bold mb-[24px] mt-[48px] text-red-600 underline decoration-wavy underline-offset-4 leading-[24px]`}>
-              Now Lets Get to Current Situation
+              Now Lets Get to Current Situation ( After Your Overtinking Night All your Answers are Here )
             </h2>
 
             <QuestionCard id="p4q68" question="Q- Mi je kahi ata Didi tula Divas ratra manvycha Prytna Kartoy tyala Attachments ch Nav detana tula vait kasa nahi watat re… Guilt ahe mala mi je kahi tujya vr chidlo tyach… majya sathi ani majya samor Radli ahes tu… Hot ahe mala Regret… Bhai tula Aadi pasun ch Admire karycho mi…Nahi watat mala tu dusrya muli Sarkhi… Nehmi tuji Care karato, bas tula nehmi khush bagych ahe… tu ahes mhnun Manvat ahe tula, nahi tr Dusrya kuthlya Muli la bhav pn nasta dila yevda… Even mi Majya GF kiva Baiko sathi pn yevda kadi Efforts nahi ghenar; mahit ahe tula kasa ahe Roshan… Tu Ahes mhunun yevda Ego Side line karun boltoy Didi… yevd vait treat karychi garaj nahi." />
-            <QuestionCard id="p4q69" question="Q- Are Didi Literally jya mulin vr mi try martoy tyancha sobt kahi bolat aslo ani tuja kahi message ala tr tyana ignore karun tuja sobt bolto… ahes tu tyancha peksha Important maja sathi Devi samjto tula… tula khara wata mi tujya lagnat kiva kuthe yeun radnar… kiva tu random kuthlya dusrya mula sobt boli tr possessive honar… are Didi mich tula Nehmi bolych ki Sarvan sobt Maitri thev… He asla One to one relation changla nahi…swata tula group convo madhe add karycho… Bolycho ki Punyala jaun Maje kar mitran sobt… hach Time ahe lagna nantr Time nahi bhetnar… tula Tujya Friend chya lagnat jayla pn mich Force kela bhai bolo ki june Friends la bhetun changla watel… At a same time tumhi sarv muli hotya mhnun Yash la thoda laksh de mhnun pn bolo… Mich Force kela hota tula Event la ye mhnun pn… Bhai Even tula Prakash Soni sobt bolayla ye mhnun Office madhe pn mich gheun aalo… are mala wata bhai Dipali tu Freely jagav ani aapli life enjoy karavi… tasle attachments wagera nahit kahi ki tu maja sobt boli nahi tr mala kadi problem honar… are Ghanta but at this moment tu ahes maja priority list madhe sarvan sarkhich… Aplya Side ni Nehmi Maitri Nibhavli ahe ani Nibhvat rahanar." />
+            <QuestionCard id="p4q69" question="Q- Are Didi Literally jya mulin vr mi try martoy tyancha sobt kahi bolat aslo ani tuja kahi message ala tr tyana ignore karun tuja sobt bolto… ahes tu tyancha peksha Important maja sathi Devi samjto tula… tula khara wata mi tujya lagnat kiva kuthe yeun radnar… kiva tu random kuthlya dusrya mula sobt boli tr possessive honar… are Didi mich tula Nehmi bolych ki Sarvan sobt Maitri thev… He asla One to one relation changla nahi…swata tula group convo madhe add karycho… kahich Possessive nohto… Bolycho ki Punyala jaun Maje kar mitran sobt… hach Time ahe lagna nantr Time nahi bhetnar… tula Tujya Friend chya lagnat jayla pn mich Force kela bhai bolo ki june Friends la bhetun changla watel… At a same time tumhi sarv muli hotya mhnun Yash la thoda laksh de mhnun pn bolo… Mich Force kela hota tula Event la ye mhnun pn… Bhai Even tula Prakash Soni sobt bolayla ye mhnun Office madhe pn mich gheun aalo… are mala wata bhai Dipali tu Freely jagav ani aapli life enjoy karavi… tasle attachments wagera nahit kahi ki tu maja sobt boli nahi tr mala kadi problem honar… are Ghanta but at this moment tu ahes maja priority list madhe sarvan sarkhich… Aplya Side ni Nehmi Maitri Nibhavli ahe ani Nibhvat rahanar." />
             <QuestionCard id="p4q70" question="Q- Dipali tula khara wata mi tula Efforts count karvat ahe ?... Are Didi mi je kahi kela te me khup selfless houn without any expectations kelay, mi pratyek sukha dukhat Gambhir pane tuja sobt ubha hoto... Ani Maitri Madhe He sarv karvch lagta...Ani mi Life time tuja sathi karatch rahanar... no Doubt... Maja kartvya ahe te... Bare minimum ahe te… But Didi tu je kahi karat ahes na... Ki thoda controll karu swatala... Roshan la Ignore karu mg to swata thambnar... Reels pathvychya nahit save karycha fukatcha attitude... Sada Roshan ni call kar bolo tr faltu madhe juna vishay kadun trigger karycha... Roshan peksha tula dusre log jawal che jhale ahet... Jyani sada lagnat pn swatahun nahi bolavla te tula javal che watat... Bhai sada tula party la bolavla tr mala shivya ghalanare pn hech loka hote... Yashraj ani sujal tr ajun pn boltat mala... Pn still tula te sarv javalche jhalet... Are Aniket sarkha divas bhar fkt tulach Message karun possessive ani obsessed houn basnare tuja lover tula Maja sarkha kasa watu shkto. " />
             <QuestionCard id="p4q71" question="Q- Bg Didi Mi Divas ratra mulan sobt rahato Mala Mahit ahe mulanchi Mentality… In case Kuthlya pn mulala eka mula sathi Feelings astil kiva to tya muli madhe interest asel… ani ti mulgi tyala thoda jari kay boli tr to mulga tila ghost karnar… asa dakhvnar ki tyala kahich farak nahi pdt… tulach majhi garaj ahe… mala tujhi nahi… Relationships madhe asch hota… Majhe mitra tyancha GF la ashech ghost karun torture kartat, tyana mahit ahe muli emotional fool astat tyach yetil prt…mala mahit ahe Didi mulanche Feeling kadi kami nastat hot Believe me, bas te dakhvnar nahit kadi, Aniket pn hech same pattern follow kartoy… karan tyala mahit ahe ki tu Mandh Buddhi swata janar tyacha kade" options={["mi Janar tyacha kade avdta tillu mala", "Baki mulan sarkh mala pn kahi ghena dena nahi"]} />
 
-
-            {/* Reel 2 (Dblag9Wox4S) */}
+            {/* REEL 2 (Dblag9Wox4S) */}
             <div className="my-[48px] flex justify-center w-full">
               <iframe 
-                src="https://www.instagram.com/reel/DeEo1wJRfMe/embed" 
+                src="https://www.instagram.com/reel/Dblag9Wox4S/embed" 
                 width="320" 
                 height="540" 
                 frameBorder="0" 
@@ -374,14 +367,63 @@ export default function Page4() {
               />
             </div>
 
-            <p className={textClass}>Pn mi He sarv ka karu Didi ? Tu tr majhi changli matrin ahes na, Tula Impress karyla nahi baslo… Aaj tu chukli tr Bhandlo tuja sobt udya prt Sorry bolun sarv Nit karnar… nasel manat tr manvat rahanar… Maitri Madhe kasla EGO bhai kasli kay Self Respect. Tula tr kahi garaj nastana Bahin bolo ahe… bolo ki nehmi raksha karel… I will always stand by you in your Good’s and Bad’s. Tula jo kalava bandla hatha vr, tujya sathi nasel important majya sathi ahe tyach significance… Tension nako gheu tutla tr prt bandhun ghe. Tuje kadi bhandan nahi hot kay Bhau bahini sobt pn nantr sarv nit hota na ki karte Nakhre tithe pn. </p>
-            <p className={`${caveat.className} text-3xl font-bold mb-[32px] text-[#3a2a1e] text-center leading-[24px]`}>
-              Nibhane wale Manaaya Karte hai Didi... Choda Nahi Karte!! 
-            </p>
-            <p className={textClass}>Kay bolis ki Apli Friendship Tillya chya bolnya vr Depend karte… to prt ala tr prt tech tech loop…Mi last 2 months pasun tillya cha vishay pn nohto kadat… tu swata Ajeeb wagychi mg bolycho… tya addi pn 2 months kahich nohto bolo tillya badal karan tyani kami kela hota nantr tyanich yeun sarv bhasad keli. Pn bas ata tula last boltoy Tillya jasa Bakin sobt behave karto tasa tyani tuja sobt behave kela tr mala kahi problem nahi… mi thodi bolo tyacha sobt Dushmani kar ? but incase tula kahi special treatment pahije asel tr… mala problem ahe… Baki mulana tyacha kahi fark nahi pdt tr tula pn nako padyla… konala kahi ghena dena nahi tyach na tyala ahe konacha… bas kadi to bhetla tr boltat neat… yevdach… Bahin bolto tula Didi but hya peksha jasta tyach Involvement pahije asel tr mg tu prt tech chuk karat ahe… Kahi garaj nahi special treatment chi ata tari band kar… Ani nahi depend kart tya tillya vr apli friendship… Bas tu kuthe pn life madhe chukat asel tr mi as a brother tula samjvnar. Tech tr maitri aste na</p>
+            <p className={textClass}>Pn mi He sarv ka karu Didi ? Tu tr majhi changli matrin ahes na, Tula Impress karyla nahi baslo… Aaj tu chukli tr Bhandlo tuja sobt udya prt Sorry bolun sarv Nit karnar… nasel manat tr manvat rahanar… Maitri Madhe kasla EGO bhai kasli kay Self Respect. Tula tr kahi garaj nastana Bahin bolo ahe… bolo ki nehmi raksha karel… I will always stand by you in your Good’s and Bad’s. Tula jo kalava bandla hatha vr, tujya sathi nasel important majya sathi ahe tyach significance… Tension nako gheu tutla tr prt bandhun ghe majya kadun. Tuje kadi bhandan nahi hot kay Bhau bahini sobt pn nantr sarv nit hota na ki karte Nakhre tithe pn. </p>
             
-            <QuestionCard id="p4q72" question="Q- Mala Ghanta farak nahi padat tu maja konala kahi sangat asel tr karan mi khup logical hoto, ani mi sarvan sobt asach ahe… majha kahich nahi chukla… maja tuja sathi kahich novta… pn tuch vichar kar tya Aniketla ka yevda tras jhala jevha tyani je kela te sarv baher padla ? karan tyacha kade tyache answerch novte ? Bas bolto “Avadte mala Dipali, Majhi personal life ahe ti, Mhnun yevda involve hot ahe ticha life madhe “" />
-            <QuestionCard id="p4q73" question={'Q- Kay Boli “ tyani pn Manvycha prytna kela asta tr tyacha sobt pn aadhi sarkhi Normal jhali asti “\nTula Sarvan Samor Possessive ani Attached houn “Mi mulga ahe tr mala mulich avdnar na, Avdte mala Dipali, ti Majhi Personal Life ahe “ \nAni Swathun Bahin bolnar mulga same kasa watu shkto… Mi tr sarvan sobt asach hoto, Majhi tr kahi chuk pn nahi.\nTya Obsessed Tillya mule yevdi sarv Faltugiri jhalya vr tula tyacha sobt prt aadhi sarkha Normal Wagycha Vichar jari yet asel… tula te sarv prt pahije asel tr U can Block me Didi, No worries ata mi nahi padnar tumchya lafdyat.'} options={["Ha karte Block tula", "Nako Aniket sobt kahi ata baki sobt jasa tasch thevnar"]} />
+            <p className={textClass}>Kay bolis ki Apli Friendship Tillya chya bolnya vr Depend karte… to prt ala tr prt tech tech loop…Mi last 2 months pasun tillya cha vishay pn nohto kadat… tu swata Ajeeb wagychi mg bolycho… tya addi pn 2 months kahich nohto bolo tillya badal karan tyani kami kela hota nantr tyanich yeun sarv bhasad keli. Pn bas ata tula last boltoy Tillya jasa Bakin sobt behave karto tasa tyani tuja sobt behave kela tr mala kahi problem nahi… mi thodi bolo tyacha sobt Dushmani kar ? but incase tula kahi special treatment pahije asel tr… mala problem ahe… Baki mulana tyacha kahi fark nahi pdt tr tula pn nako padyla… konala kahi ghena dena nahi tyach na tyala ahe konacha… bas kadi to bhetla tr boltat neat… yevdach… Bahin bolto tula Didi but hya peksha jasta tyach Involvement pahije asel tr mg tu prt tech chuk karat ahe… Kahi garaj nahi special treatment chi ata tari band kar… Ani nahi depend kart tya tillya vr apli friendship… Bas tu kuthe pn life madhe chukat asel tr mi as a brother tula samjvnar. Tech tr maitri aste na… Nahi karych mala tu Impress bas…</p>
+            
+            <QuestionCard 
+              id="p4q72" 
+              question="Q- Mala khara Ghanta farak nahi padat tu maja konala kahi sangat asel tr karan mi khup logical hoto, ani mi sarvan sobt asach ahe…Even tu sarv kahi sarvana sangitla pn ahe Sujal la Yashraj la tya Nantr mi tula kahi tari bolo kay ? karan  majha kahich nahi chukla… maja tuja sathi kahich novta… pn tuch vichar kar tya Aniketla ka yevda tras jhala jevha tyani je kela te sarv baher padla ? Yevdi ka laaj watli tyala, karan asli faltu giri konch muli sobt nasta karat, tyacha kade tyache answerch novte ? Bas bolto “Avadte mala Dipali, Majhi personal life ahe ti, Mhnun yevda involve hot ahe ticha life madhe“ yevda Clear bolya vr kay rahila ? jaun kar confirm konala pn vicharun" 
+              options={["Mala pn Avdto to", "Chutiya ahe to"]} 
+            />
+
+            <QuestionCard 
+              id="p4q73" 
+              question="Tu Kuthlya pn mulala Rakhi pathvte bolya vr samorcha mulga nako pathvu kiva kahi garaj nahi he kadich nahi bolnar, tula khara wata tya Tillya la tu bolnar ki “Roshan bola ki tu mala ani Aniket la Rakhi pathav bagu to gheto kay”. Tr to Nahi bolnar… Kutla pn kiti pn Halkat mulga asu de to ho pathvch bolnar. Ghanta to tula kadi Bahin boluch nahi shakat karan khup Feelings hotya tyala tuja sathi… Samaj Didi kadi tari… Just tell me Tyani tya nantr kadi rakhi ch vishay tari kadla kay ?... Kadi chukun bahin/Didi tari bola kay ?" 
+              options={["Ho Mala Roj Didi Bolycha", "Kadich vishay nahi kadla chukun pn"]} 
+            />
+
+            <QuestionCard 
+              id="p4q74" 
+              question='Q- Didi tya Time la sarv tula “Tillya chi Tilli”, “Room Book kar Office la ka yeta ” Chidvat hote still to sarvan samor Bola ki " Mi mulga ahe tr mala mulich avdnar, Avdte mala Dipali mhnun yevda mage mage karto, mhnun yevda involve hotoy, majhi personal life ahe ti" Yevdch asta tr bola asta na majhi pn "Bahini sarkhi ahe kiva Changli maitrin ahe " ka nahi bolu shakla ?' 
+              options={["Avdte mi tyala mhnun", "Roj Didi Bolycha mala"]} 
+            />
+
+            <QuestionCard 
+              id="p4q75" 
+              question="Are Didi yevde sarv loka tumchya Relation la naav thevat hote… kahi pn ghan ghan bolat hote… are even me yevda changla mitra asun tula yevda Chidvla First time tya divshi… to he je kahi bola te Barobr ahe ka ? Bahini sarkhi ahe bolun vishay sampvu shakla asta… Ani to jhatu yevda sarv bola ahe at the end… Ani still tu tyacha sobt normal wagnar ahes ka" 
+              options={["Ha Normal ahe mala he, chalt yevda tr", "Bilkul nahi Majhi swatachi pn thodi ijjat ahe"]} 
+            />
+
+            <QuestionCard 
+              id="p4q76" 
+              question="Mi tr swata bolo tula rakhi pathv kahi garaj nastana, roj tula Didi Didi bolto, Bahini sarkhi ahes bolto, kahich Feelings nahit tuja sathi mhnun, Even to mahesh pn tula yeun Raksha bandhan Wish karu bahin bola mg tya Tillya la kashachi laaj wate tula bahin bolayla ?" 
+              options={["kahi Attachments ani Feelings nahit mhnun", "Sarvana Bahin banvta tumhi"]} 
+            />
+
+            <QuestionCard 
+              id="p4q77" 
+              question="Bg Dipali maja Intent khup Pure ahet tuja sathi... Tya Tillu la plss maja sarkh nako samju... Insulting feel hota te mala… Nahi Match karu shkat to maja character. \nAre even tya Aaradhna la pn samjla ki Tillu aplyla life madhe khup jast involve hot ahe, kahi ghena dena nastana, attachments tr jhalech ahet, involve nako hou jasta he pn nahi bolu shkt, but tyachi feelings control karyla ani samor kahi complications nako mhnun tine Tillu la Rakhi pathvli. Muli Generally hech kartat Intrest nasla tr, Nasel tila pn Tillu madhe Interest." 
+              options={["Ti random konala pn Rakhi bandte", "Tila samor kahi unnecessary Affection ani Complication nako asnar"]} 
+            />
+
+            <QuestionCard 
+              id="p4q78" 
+              question="Sarv changlya gharchya muli hech kartat… mulga jasta involve hot asel , divas ratra message  karat asel...ani tila interest Nasel,tr Bhau banvun ghetat to avoid unnecessary Obsession and possession. This is the best way to maintain the boundaries. Tu kay kela Didi ?" 
+              options={["to swata kami karych teva message karun provoke karychi", "kahi ghena dena novta mala"]} 
+            />
+
+            <QuestionCard 
+              id="p4q79" 
+              question="Mi Mulan madhe rahato Mala mulanchi mentality mahit ahe… sarvani bagitla bhai Tyacha dolyat tujya sathi Obsession ani possessiveness... ahet tyala tuja sathi feelings. Jara athav te to kasa pagal jhala hota tuja sathi ? Baki konch nohta uthla tuja sathi ani khara sangto tu Aniket sobt kuthe jat asti tr mi pn nasto uthlo kiti pn kahi pn jhala asta tari (mother promise), Amchi tr sarvanchi hasi majak chalu hoti… yashraj tr swata bola hota mala ja Roshan sodun ye mg Toch ka uthla fkt ?" 
+              options={["tyala Committed hoti mhnun", "Amhi sarv Mitra Nahit tuje toch ekta sarvat Bhari ahe"]} 
+            />
+
+            <QuestionCard 
+              id="p4q80" 
+              question={'Q- Kay Boli “ tyani pn Manvycha prytna kela asta tr tyacha sobt pn aadhi sarkhi Normal jhali asti “\nTula Sarvan Samor Possessive ani Attached houn “Mi mulga ahe tr mala mulich avdnar na, Avdte mala Dipali, ti Majhi Personal Life ahe “ \nAni Swathun Bahin bolnar mulga same kasa watu shkto… Mi tr sarvan sobt asach hoto, Majhi tr kahi chuk pn nahi.\nTya Obsessed Tillya mule yevdi sarv Faltugiri jhalya vr tula tyacha sobt prt aadhi sarkha Normal Wagycha Vichar jari yet asel… tula te sarv prt pahije asel tr U can Block me Didi, No worries ata mi nahi padnar tumchya lafdyat.'} 
+              options={["Ha karte Block tula", "Nako Aniket sobt kahi ata baki sobt jasa tasch thevnar"]} 
+            />
 
             <p className={textClass}>Mala Mahit ahe maja Character… Mi sarvan sobt asach hoto tu kahi special nohti… Tuja Tillu Maja Character kadi match pn nahi karu shakat… sarvan sobt Nit rahato, mhnun yevde mitra ahe ani sarvech Contact madhe ahe ajun pn…Tillu sarkh fkt tujya mage mage nahi kela… sarvanchi help karycho tuch nohti fkt… Kahi Feelings ani attachments novtya tuja sathi… Mala Aniket sarkha samjun chuk keli tu… Bhari judge kela maja Character tu.</p>
 
@@ -389,8 +431,9 @@ export default function Page4() {
               Roshan Is Built Different — Thank You, Dipu Didi!
             </h2>
             <p className={`${caveat.className} text-3xl font-bold mb-[32px] text-[#3a2a1e] text-center leading-[24px]`}>
-              Lets Close Aniket topic here Permanently
+              Lets Close Tillu topic here permanently
             </p>
+
 
             <div className="flex justify-center mt-12 mb-[32px]">
               <button 
